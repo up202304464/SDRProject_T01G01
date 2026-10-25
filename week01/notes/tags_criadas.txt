@@ -1,0 +1,7 @@
+lib/extract_csi_impl.cc:74:        add_item_tag(0, nitems_written(0), k, v, alias_pmt());
+lib/frame_equalizer_impl.cc:241:                    add_item_tag(0,
+lib/mapper_impl.cc:137:                add_item_tag(0, nitems_written(0), key, value, srcid);
+lib/mapper_impl.cc:140:                add_item_tag(
+lib/mapper_impl.cc:144:                add_item_tag(0, nitems_written(0), pmt::mp("encoding"), encoding, srcid);
+lib/sync_long.cc:132:                    add_item_tag(0,
+lib/sync_short.cc:146:        add_item_tag(0, item, key, value, srcid);

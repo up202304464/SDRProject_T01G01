@@ -1,0 +1,1001 @@
+RUN_VOLK_TESTS: volk_64u_popcntpuppet_64u(131071,1987)
+generic completed in 214.743 ms
+a_sse4_2 completed in 222.812 ms
+Best aligned arch: generic
+Best unaligned arch: generic
+RUN_VOLK_TESTS: volk_16u_byteswappuppet_16u(131071,1987)
+generic completed in 184.602 ms
+u_sse2 completed in 34.6502 ms
+a_sse2 completed in 34.4515 ms
+u_avx2 completed in 29.8551 ms
+a_avx2 completed in 33.5763 ms
+u_orc completed in 32.7579 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32u_byteswappuppet_32u(131071,1987)
+generic completed in 154.248 ms
+u_sse2 completed in 119.887 ms
+a_sse2 completed in 130.076 ms
+u_avx2 completed in 60.6197 ms
+a_avx2 completed in 62.2207 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32u_popcntpuppet_32u(131071,1987)
+generic completed in 492.119 ms
+a_sse4_2 completed in 117.328 ms
+Best aligned arch: a_sse4_2
+Best unaligned arch: generic
+RUN_VOLK_TESTS: volk_64u_byteswappuppet_64u(131071,1987)
+generic completed in 268.55 ms
+u_sse2 completed in 338.857 ms
+a_sse2 completed in 340.082 ms
+u_ssse3 completed in 251.022 ms
+a_ssse3 completed in 248.135 ms
+u_avx2 completed in 241.681 ms
+a_avx2 completed in 242.801 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_s32fc_rotator2puppet_32fc(131071,1987)
+generic completed in 950.976 ms
+a_sse4_1 completed in 581.236 ms
+u_sse4_1 completed in 588.115 ms
+a_avx completed in 291.205 ms
+u_avx completed in 281.061 ms
+a_avx_fma completed in 303.049 ms
+u_avx_fma completed in 314.635 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_8u_conv_k7_r2puppet_8u(131071,1987)
+spiral completed in 2447.05 ms
+avx2 completed in 2729.11 ms
+generic completed in 19254 ms
+Best aligned arch: spiral
+Best unaligned arch: spiral
+RUN_VOLK_TESTS: volk_32f_x2_fm_detectpuppet_32f(131071,1987)
+a_avx completed in 53.3399 ms
+a_sse completed in 76.3055 ms
+generic completed in 289.531 ms
+u_avx completed in 53.9879 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_16ic_s32f_deinterleave_real_32f(131071,1987)
+a_avx2 completed in 39.5624 ms
+a_sse4_1 completed in 49.9462 ms
+a_sse completed in 190.138 ms
+generic completed in 183.257 ms
+u_avx2 completed in 46.2986 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_deinterleave_real_8i(131071,1987)
+a_avx2 completed in 26.2148 ms
+a_ssse3 completed in 24.2898 ms
+generic completed in 114.502 ms
+u_orc completed in 53.5575 ms
+u_avx2 completed in 22.9428 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_deinterleave_16i_x2(131071,1987)
+a_avx2 completed in 62.7625 ms
+a_ssse3 completed in 76.0702 ms
+a_sse2 completed in 97.9028 ms
+generic completed in 294.863 ms
+u_orc completed in 76.1258 ms
+u_avx2 completed in 66.1718 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_s32f_deinterleave_32f_x2(131071,1987)
+a_avx2 completed in 119.357 ms
+a_sse completed in 428.59 ms
+generic completed in 664.662 ms
+u_orc completed in 164.747 ms
+u_avx2 completed in 126.19 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_deinterleave_real_16i(131071,1987)
+a_avx2 completed in 39.0762 ms
+a_ssse3 completed in 30.8894 ms
+a_sse2 completed in 49.3879 ms
+generic completed in 100.894 ms
+u_avx2 completed in 25.4612 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_magnitude_16i(131071,1987)
+a_avx2 completed in 134.522 ms
+a_sse3 completed in 746.798 ms
+a_sse completed in 701.69 ms
+generic completed in 1132 ms
+u_avx2 completed in 104.066 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_s32f_magnitude_32f(131071,1987)
+a_avx2 completed in 93.831 ms
+a_sse3 completed in 473.836 ms
+a_sse completed in 452.105 ms
+generic completed in 458.897 ms
+u_avx2 completed in 90.628 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_convert_32fc(131071,1987)
+a_avx2 completed in 199.267 ms
+generic completed in 336.762 ms
+a_sse2 completed in 377.242 ms
+a_avx completed in 397.671 ms
+u_avx2 completed in 191.304 ms
+u_sse2 completed in 371.167 ms
+u_avx completed in 398.8 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_x2_multiply_16ic(131071,1987)
+generic completed in 321.295 ms
+a_sse2 completed in 105.569 ms
+u_sse2 completed in 105.666 ms
+u_avx2 completed in 74.028 ms
+a_avx2 completed in 77.9224 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16ic_x2_dot_prod_16ic(131071,1987)
+generic completed in 2516.8 ms
+a_sse2 completed in 109.081 ms
+u_sse2 completed in 104.589 ms
+u_avx2 completed in 61.0848 ms
+a_avx2 completed in 49.9558 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16i_s32f_convert_32f(131071,1987)
+u_avx2 completed in 33.6444 ms
+u_avx completed in 42.615 ms
+u_sse4_1 completed in 39.9902 ms
+u_sse completed in 77.3594 ms
+generic completed in 329.345 ms
+a_avx2 completed in 34.0248 ms
+a_avx completed in 42.0799 ms
+a_sse4_1 completed in 46.1123 ms
+a_sse completed in 64.8894 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16i_convert_8i(131071,1987)
+u_avx2 completed in 13.4443 ms
+u_sse2 completed in 14.3916 ms
+generic completed in 112.018 ms
+a_avx2 completed in 11.8805 ms
+a_sse2 completed in 12.7784 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_16i_32fc_dot_prod_32fc(131071,1987)
+generic completed in 173.293 ms
+u_sse completed in 162.302 ms
+u_avx2_fma completed in 75.0841 ms
+u_avx2 completed in 71.412 ms
+a_sse completed in 169.63 ms
+a_avx2 completed in 69.7041 ms
+a_avx2_fma completed in 71.4455 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_accumulator_s32f(131071,1987)
+a_avx completed in 26.0271 ms
+u_avx completed in 27.7841 ms
+a_sse completed in 59.1506 ms
+u_sse completed in 55.6935 ms
+generic completed in 228.063 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_add_32f(131071,1987)
+u_avx completed in 94.1839 ms
+u_sse completed in 95.4307 ms
+generic completed in 156.618 ms
+a_avx completed in 113.345 ms
+a_sse completed in 97.5007 ms
+u_orc completed in 92.9892 ms
+Best aligned arch: u_orc
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32f_index_max_16u(131071,1987)
+a_avx completed in 89.1695 ms
+a_sse4_1 completed in 146.934 ms
+a_sse completed in 114.97 ms
+generic completed in 214.347 ms
+u_avx completed in 72.176 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_index_max_32u(131071,1987)
+a_sse4_1 completed in 285.774 ms
+a_sse completed in 233.695 ms
+a_avx completed in 144.629 ms
+generic completed in 442.016 ms
+u_avx completed in 144.799 ms
+u_sse4_1 completed in 295.254 ms
+u_sse completed in 244.308 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_index_min_16u(131071,1987)
+a_avx completed in 86.3124 ms
+a_sse4_1 completed in 169.767 ms
+a_sse completed in 138.047 ms
+generic completed in 235.982 ms
+u_avx completed in 78.2006 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_index_min_32u(131071,1987)
+a_sse4_1 completed in 291.429 ms
+a_sse completed in 247.656 ms
+a_avx completed in 146.794 ms
+generic completed in 459.111 ms
+u_avx completed in 158.017 ms
+u_sse4_1 completed in 287.26 ms
+u_sse completed in 237.685 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_32f_multiply_32fc(131071,1987)
+a_avx completed in 184.774 ms
+a_sse completed in 185.054 ms
+generic completed in 208.274 ms
+u_orc completed in 177.804 ms
+Best aligned arch: u_orc
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32fc_32f_add_32fc(131071,1987)
+generic completed in 200.793 ms
+u_avx completed in 185.911 ms
+a_avx completed in 173.025 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_log2_32f(131071,1987)
+generic completed in 2832.28 ms
+a_avx2_fma completed in 75.9755 ms
+a_avx2 completed in 71.5954 ms
+a_sse4_1 completed in 136.13 ms
+u_sse4_1 completed in 141.326 ms
+u_avx2_fma completed in 71.8556 ms
+u_avx2 completed in 68.7708 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_expfast_32f(131071,1987)
+a_avx_fma completed in 44.9806 ms
+a_avx completed in 42.6705 ms
+a_sse4_1 completed in 51.4451 ms
+u_avx_fma completed in 53.8106 ms
+u_avx completed in 37.5226 ms
+u_sse4_1 completed in 48.2334 ms
+generic completed in 921.041 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_sin_32f(131071,1987)
+a_avx2_fma completed in 405.809 ms
+a_avx2 completed in 401.539 ms
+a_sse4_1 completed in 784.245 ms
+u_avx2_fma completed in 399.203 ms
+u_avx2 completed in 405.404 ms
+u_sse4_1 completed in 853.563 ms
+generic completed in 1788.06 ms
+Best aligned arch: u_avx2_fma
+Best unaligned arch: u_avx2_fma
+RUN_VOLK_TESTS: volk_32f_cos_32f(131071,1987)
+a_avx2_fma completed in 419.167 ms
+a_avx2 completed in 450.376 ms
+a_sse4_1 completed in 828.559 ms
+u_avx2_fma completed in 444.692 ms
+u_avx2 completed in 406.553 ms
+u_sse4_1 completed in 779.832 ms
+generic_fast completed in 4751.17 ms
+generic completed in 1814.07 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_tan_32f(131071,1987)
+a_avx2_fma completed in 522.836 ms
+a_avx2 completed in 564.119 ms
+a_sse4_1 completed in 1098.3 ms
+u_avx2_fma completed in 558.536 ms
+u_avx2 completed in 533.095 ms
+u_sse4_1 completed in 1082.22 ms
+generic completed in 4457.92 ms
+Best aligned arch: a_avx2_fma
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_atan_32f(131071,1987)
+a_avx2_fma completed in 171.889 ms
+a_avx2 completed in 166.439 ms
+a_sse4_1 completed in 322.793 ms
+u_avx2_fma completed in 156.986 ms
+u_avx2 completed in 151.877 ms
+u_sse4_1 completed in 311.966 ms
+polynomial completed in 523.539 ms
+generic completed in 4405.39 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_asin_32f(131071,1987)
+a_avx2_fma completed in 498.027 ms
+a_avx completed in 508.016 ms
+a_sse4_1 completed in 759.967 ms
+u_avx2_fma completed in 496.378 ms
+u_avx completed in 555.286 ms
+u_sse4_1 completed in 780.688 ms
+generic completed in 3698.94 ms
+Best aligned arch: u_avx2_fma
+Best unaligned arch: u_avx2_fma
+RUN_VOLK_TESTS: volk_32f_acos_32f(131071,1987)
+a_avx2_fma completed in 496.803 ms
+a_avx completed in 504.775 ms
+a_sse4_1 completed in 800.801 ms
+u_avx2_fma completed in 526.012 ms
+u_avx completed in 508.644 ms
+u_sse4_1 completed in 805.746 ms
+generic completed in 3613.88 ms
+Best aligned arch: a_avx2_fma
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_s32f_power_32fc(131071,1987)
+no architectures to test
+RUN_VOLK_TESTS: volk_32f_s32f_calc_spectral_noise_floor_32f(131071,1987)
+a_avx completed in 61.1856 ms
+a_sse completed in 108.976 ms
+generic completed in 1245.17 ms
+u_avx completed in 56.7463 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_s32f_atan2_32f(131071,1987)
+generic completed in 10351.1 ms
+polynomial completed in 3802.23 ms
+a_avx2_fma completed in 262.123 ms
+a_avx2 completed in 264.993 ms
+u_avx2_fma completed in 262.991 ms
+u_avx2 completed in 258.115 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_x2_conjugate_dot_prod_32fc(131071,1987)
+generic completed in 350.981 ms
+block completed in 280.316 ms
+u_avx completed in 124.86 ms
+u_sse3 completed in 230.671 ms
+a_avx completed in 131.254 ms
+a_sse3 completed in 227.92 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_deinterleave_32f_x2(131071,1987)
+a_avx completed in 159.278 ms
+a_sse completed in 208.791 ms
+generic completed in 356.044 ms
+u_avx completed in 153.411 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_accumulator_s32fc(131071,1987)
+generic completed in 221.351 ms
+u_avx completed in 59.2282 ms
+u_sse completed in 118.256 ms
+a_avx completed in 57.6302 ms
+a_sse completed in 112.999 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_deinterleave_64f_x2(131071,1987)
+u_avx completed in 280.213 ms
+u_sse2 completed in 348.665 ms
+generic completed in 467.213 ms
+a_avx completed in 305.054 ms
+a_sse2 completed in 358.769 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_s32f_deinterleave_real_16i(131071,1987)
+a_avx2 completed in 50.1158 ms
+a_sse completed in 279.081 ms
+generic completed in 283.349 ms
+u_avx2 completed in 58.7291 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_deinterleave_imag_32f(131071,1987)
+a_avx completed in 85.5935 ms
+a_sse completed in 78.9643 ms
+generic completed in 107.548 ms
+u_avx completed in 85.1743 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_deinterleave_real_32f(131071,1987)
+a_avx2 completed in 83.9219 ms
+a_sse completed in 78.1342 ms
+generic completed in 110.616 ms
+u_avx2 completed in 78.3948 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_deinterleave_real_64f(131071,1987)
+a_avx2 completed in 148.935 ms
+a_sse2 completed in 141.746 ms
+generic completed in 154.427 ms
+u_avx2 completed in 141.879 ms
+Best aligned arch: a_sse2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_x2_dot_prod_32fc(131071,1987)
+generic completed in 170.959 ms
+u_sse3 completed in 144.773 ms
+u_avx completed in 127.367 ms
+u_avx_fma completed in 126.605 ms
+a_sse3 completed in 188.114 ms
+a_avx completed in 107.84 ms
+a_avx_fma completed in 127.044 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx_fma
+RUN_VOLK_TESTS: volk_32fc_32f_dot_prod_32fc(131071,1987)
+generic completed in 233.084 ms
+a_avx2_fma completed in 73.4582 ms
+a_avx completed in 65.5089 ms
+a_sse completed in 82.0669 ms
+u_avx2_fma completed in 69.1195 ms
+u_avx completed in 66.8296 ms
+u_sse completed in 72.67 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_index_max_16u(131071,1987)
+a_avx2_variant_0 completed in 82.3027 ms
+a_avx2_variant_1 completed in 39.7432 ms
+a_sse3 completed in 84.4928 ms
+generic completed in 223.565 ms
+u_avx2_variant_0 completed in 79.5975 ms
+u_avx2_variant_1 completed in 46.2043 ms
+Best aligned arch: a_avx2_variant_1
+Best unaligned arch: u_avx2_variant_1
+RUN_VOLK_TESTS: volk_32fc_index_max_32u(131071,1987)
+a_avx2_variant_0 completed in 163.661 ms
+a_avx2_variant_1 completed in 90.882 ms
+a_sse3 completed in 171.823 ms
+generic completed in 452.525 ms
+u_avx2_variant_0 completed in 176.383 ms
+u_avx2_variant_1 completed in 85.342 ms
+Best aligned arch: u_avx2_variant_1
+Best unaligned arch: u_avx2_variant_1
+RUN_VOLK_TESTS: volk_32fc_index_min_16u(131071,1987)
+a_avx2_variant_0 completed in 82.2729 ms
+a_avx2_variant_1 completed in 40.1642 ms
+a_sse3 completed in 88.5985 ms
+generic completed in 223.37 ms
+u_avx2_variant_0 completed in 85.4337 ms
+u_avx2_variant_1 completed in 44.8402 ms
+Best aligned arch: a_avx2_variant_1
+Best unaligned arch: u_avx2_variant_1
+RUN_VOLK_TESTS: volk_32fc_index_min_32u(131071,1987)
+a_avx2_variant_0 completed in 166.051 ms
+a_avx2_variant_1 completed in 89.106 ms
+a_sse3 completed in 179.778 ms
+generic completed in 445.925 ms
+u_avx2_variant_0 completed in 163.692 ms
+u_avx2_variant_1 completed in 86.5288 ms
+Best aligned arch: u_avx2_variant_1
+Best unaligned arch: u_avx2_variant_1
+RUN_VOLK_TESTS: volk_32fc_s32f_magnitude_16i(131071,1987)
+generic completed in 482.931 ms
+a_avx2 completed in 92.7235 ms
+a_sse3 completed in 426.318 ms
+a_sse completed in 427.544 ms
+u_avx2 completed in 92.3437 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_magnitude_32f(131071,1987)
+u_avx completed in 101.958 ms
+u_sse3 completed in 96.0691 ms
+u_sse completed in 97.3824 ms
+generic completed in 343.261 ms
+a_avx completed in 92.245 ms
+a_sse3 completed in 94.648 ms
+a_sse completed in 88.8314 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_sse3
+RUN_VOLK_TESTS: volk_32fc_magnitude_squared_32f(131071,1987)
+u_avx completed in 91.4758 ms
+u_sse3 completed in 99.4064 ms
+u_sse completed in 94.0567 ms
+generic completed in 198.305 ms
+a_avx completed in 81.7858 ms
+a_sse3 completed in 91.538 ms
+a_sse completed in 66.7898 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_x2_add_32fc(131071,1987)
+u_avx completed in 201.306 ms
+a_avx completed in 205.632 ms
+u_sse completed in 209.342 ms
+generic completed in 213.031 ms
+a_sse completed in 219.499 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_x2_multiply_32fc(131071,1987)
+u_avx2_fma completed in 198.07 ms
+u_avx completed in 219.911 ms
+u_sse3 completed in 231.596 ms
+generic completed in 256.346 ms
+a_avx2_fma completed in 202.517 ms
+a_avx completed in 202.663 ms
+a_sse3 completed in 203.222 ms
+u_orc completed in 225.466 ms
+Best aligned arch: u_avx2_fma
+Best unaligned arch: u_avx2_fma
+RUN_VOLK_TESTS: volk_32fc_x2_multiply_conjugate_32fc(131071,1987)
+u_avx completed in 216.166 ms
+u_sse3 completed in 201.675 ms
+generic completed in 310.786 ms
+a_avx completed in 208.766 ms
+a_sse3 completed in 193.627 ms
+Best aligned arch: a_sse3
+Best unaligned arch: u_sse3
+RUN_VOLK_TESTS: volk_32fc_x2_divide_32fc(131071,1987)
+generic completed in 459.064 ms
+u_sse3 completed in 240.166 ms
+u_avx completed in 201.596 ms
+a_sse3 completed in 248.731 ms
+a_avx completed in 200.64 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32fc_conjugate_32fc(131071,1987)
+u_avx completed in 149.732 ms
+u_sse3 completed in 138.566 ms
+generic completed in 172.048 ms
+a_avx completed in 145.616 ms
+a_sse3 completed in 135.95 ms
+Best aligned arch: a_sse3
+Best unaligned arch: u_sse3
+RUN_VOLK_TESTS: volk_32f_s32f_convert_16i(131071,1987)
+u_avx2 completed in 33.3165 ms
+u_avx completed in 33.5807 ms
+u_sse2 completed in 57.1826 ms
+u_sse completed in 328.382 ms
+generic completed in 394.477 ms
+a_avx2 completed in 30.8297 ms
+a_avx completed in 34.9398 ms
+a_sse2 completed in 56.7875 ms
+a_sse completed in 330.664 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_s32f_convert_32i(131071,1987)
+u_avx completed in 44.6916 ms
+u_sse2 completed in 55.8546 ms
+u_sse completed in 86.5881 ms
+generic completed in 398.028 ms
+a_avx completed in 36.638 ms
+a_sse2 completed in 52.4483 ms
+a_sse completed in 86.7475 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_convert_64f(131071,1987)
+u_avx completed in 100.438 ms
+u_sse2 completed in 108.56 ms
+generic completed in 121.916 ms
+a_avx completed in 95.0121 ms
+a_sse2 completed in 107.239 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_s32f_convert_8i(131071,1987)
+generic completed in 2429.69 ms
+u_avx2 completed in 32.6888 ms
+u_sse2 completed in 55.1392 ms
+u_sse completed in 305.007 ms
+a_avx2 completed in 30.2086 ms
+a_sse2 completed in 59.3576 ms
+a_sse completed in 303.132 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_convert_16ic(131071,1987)
+a_avx2 completed in 81.899 ms
+a_sse2 completed in 92.4939 ms
+generic completed in 688.593 ms
+u_avx2 completed in 77.7325 ms
+u_sse2 completed in 91.7005 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_s32f_power_spectrum_32f(131071,1987)
+no architectures to test
+RUN_VOLK_TESTS: volk_32fc_x2_square_dist_32f(131071,1987)
+a_avx2 completed in 78.7939 ms
+a_sse3 completed in 80.5614 ms
+generic completed in 260.867 ms
+u_avx2 completed in 78.9303 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_x2_s32f_square_dist_scalar_mult_32f(131071,1987)
+a_avx2 completed in 81.0908 ms
+a_avx completed in 81.1252 ms
+a_sse3 completed in 93.3953 ms
+a_sse completed in 90.1579 ms
+generic completed in 214.12 ms
+u_avx2 completed in 75.5099 ms
+u_avx completed in 80.1839 ms
+u_sse3 completed in 98.5577 ms
+u_sse completed in 86.5172 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_x2_divide_32f(131071,1987)
+a_avx completed in 77.7057 ms
+a_sse completed in 87.6108 ms
+generic completed in 357.394 ms
+u_orc completed in 88.6373 ms
+u_avx completed in 87.9324 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_dot_prod_32f(131071,1987)
+generic completed in 434.187 ms
+u_sse completed in 40.3841 ms
+u_sse3 completed in 40.1004 ms
+u_sse4_1 completed in 134.269 ms
+u_avx completed in 27.9065 ms
+u_avx2_fma completed in 57.2941 ms
+a_sse completed in 39.1306 ms
+a_sse3 completed in 40.3241 ms
+a_sse4_1 completed in 145.594 ms
+a_avx completed in 38.7113 ms
+a_avx2_fma completed in 54.8803 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_s32f_interleave_16ic(131071,1987)
+a_avx2 completed in 80.079 ms
+a_sse2 completed in 86.0921 ms
+a_sse completed in 599.164 ms
+generic completed in 577.835 ms
+u_avx2 completed in 84.41 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_x2_interleave_32fc(131071,1987)
+a_avx completed in 139.662 ms
+a_sse completed in 134.844 ms
+generic completed in 163.798 ms
+u_avx completed in 141.657 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_max_32f(131071,1987)
+a_sse completed in 77.0735 ms
+a_avx completed in 74.3254 ms
+generic completed in 129.512 ms
+u_orc completed in 78.6478 ms
+u_avx completed in 75.2305 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_min_32f(131071,1987)
+a_sse completed in 90.9869 ms
+generic completed in 136.352 ms
+u_orc completed in 80.9796 ms
+a_avx completed in 81.1705 ms
+u_avx completed in 86.667 ms
+Best aligned arch: u_orc
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32f_x2_multiply_32f(131071,1987)
+u_sse completed in 75.4514 ms
+u_avx completed in 76.0127 ms
+generic completed in 139.28 ms
+a_sse completed in 80.7572 ms
+a_avx completed in 76.1259 ms
+u_orc completed in 79.6103 ms
+Best aligned arch: u_sse
+Best unaligned arch: u_sse
+RUN_VOLK_TESTS: volk_32f_64f_multiply_64f(131071,1987)
+generic completed in 184.548 ms
+u_avx completed in 170.983 ms
+a_avx completed in 166.483 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_64f_add_64f(131071,1987)
+generic completed in 199.859 ms
+u_avx completed in 174.673 ms
+a_avx completed in 168.338 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_s32f_normalize(131071,1987)
+a_avx completed in 26.5382 ms
+a_sse completed in 30.2822 ms
+generic completed in 90.393 ms
+u_orc completed in 27.188 ms
+u_avx completed in 28.6322 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32f_s32f_power_32f(131071,1987)
+no architectures to test
+RUN_VOLK_TESTS: volk_32f_sqrt_32f(131071,1987)
+a_sse completed in 85.8619 ms
+a_avx completed in 86.1424 ms
+generic completed in 2745.63 ms
+u_avx completed in 85.894 ms
+Best aligned arch: a_sse
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_s32f_stddev_32f(131071,1987)
+a_sse4_1 completed in 133.233 ms
+a_sse completed in 112.464 ms
+a_avx completed in 69.3511 ms
+generic completed in 446.429 ms
+u_avx completed in 65.9917 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_stddev_and_mean_32f_x2(131071,1987)
+generic completed in 273.529 ms
+u_sse completed in 82.3254 ms
+u_avx completed in 39.4396 ms
+a_sse completed in 77.0363 ms
+a_avx completed in 43.8495 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x2_subtract_32f(131071,1987)
+generic completed in 135.369 ms
+a_avx completed in 77.2294 ms
+a_sse completed in 89.9773 ms
+u_orc completed in 88.7703 ms
+u_avx completed in 81.5817 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_x3_sum_of_poly_32f(131071,1987)
+a_sse3 completed in 113.494 ms
+a_avx2_fma completed in 58.5131 ms
+a_avx completed in 60.3815 ms
+generic completed in 55.2544 ms
+u_avx_fma completed in 86.499 ms
+u_avx completed in 98.5714 ms
+Best aligned arch: generic
+Best unaligned arch: generic
+RUN_VOLK_TESTS: volk_32i_x2_and_32i(131071,1987)
+a_avx2 completed in 78.4031 ms
+a_sse completed in 77.4032 ms
+generic completed in 134.739 ms
+u_orc completed in 82.194 ms
+u_avx2 completed in 72.7151 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32i_s32f_convert_32f(131071,1987)
+u_avx2 completed in 44.4685 ms
+u_sse2 completed in 38.3335 ms
+generic completed in 117.447 ms
+a_avx2 completed in 37.5188 ms
+a_sse2 completed in 41.1476 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_sse2
+RUN_VOLK_TESTS: volk_32i_x2_or_32i(131071,1987)
+a_avx2 completed in 89.9369 ms
+a_sse completed in 82.9776 ms
+generic completed in 127.051 ms
+u_orc completed in 81.2828 ms
+u_avx2 completed in 90.1013 ms
+Best aligned arch: u_orc
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32f_x2_dot_prod_16i(131071,1987)
+generic completed in 474.712 ms
+a_sse completed in 44.4065 ms
+a_avx2_fma completed in 31.3734 ms
+a_avx completed in 42.336 ms
+u_sse completed in 51.0852 ms
+u_avx2_fma completed in 26.0965 ms
+u_avx completed in 29.3073 ms
+Best aligned arch: u_avx2_fma
+Best unaligned arch: u_avx2_fma
+RUN_VOLK_TESTS: volk_64f_convert_32f(131071,1987)
+u_avx completed in 90.3003 ms
+u_sse2 completed in 110.357 ms
+generic completed in 156.557 ms
+a_avx completed in 81.508 ms
+a_sse2 completed in 95.8577 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_64f_x2_max_64f(131071,1987)
+a_avx completed in 241.166 ms
+a_sse2 completed in 239.498 ms
+generic completed in 239.916 ms
+u_avx completed in 210.712 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_64f_x2_min_64f(131071,1987)
+a_avx completed in 195.144 ms
+a_sse2 completed in 200.14 ms
+generic completed in 207.026 ms
+u_avx completed in 206.84 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_64f_x2_multiply_64f(131071,1987)
+generic completed in 200.876 ms
+u_sse2 completed in 197.834 ms
+u_avx completed in 210.78 ms
+a_sse2 completed in 207.445 ms
+a_avx completed in 199.437 ms
+Best aligned arch: u_sse2
+Best unaligned arch: u_sse2
+RUN_VOLK_TESTS: volk_64f_x2_add_64f(131071,1987)
+generic completed in 208.282 ms
+u_sse2 completed in 205.853 ms
+u_avx completed in 197.022 ms
+a_sse2 completed in 201.101 ms
+a_avx completed in 198.586 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_8ic_deinterleave_16i_x2(131071,1987)
+a_avx2 completed in 49.8964 ms
+a_sse4_1 completed in 92.2196 ms
+a_avx completed in 40.9662 ms
+generic completed in 437.569 ms
+u_avx2 completed in 54.9002 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_s32f_deinterleave_32f_x2(131071,1987)
+a_sse4_1 completed in 91.7792 ms
+a_sse completed in 419.171 ms
+a_avx2 completed in 101.181 ms
+generic completed in 290.517 ms
+u_avx2 completed in 98.5748 ms
+Best aligned arch: a_sse4_1
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_deinterleave_real_16i(131071,1987)
+a_avx2 completed in 17.6269 ms
+a_sse4_1 completed in 18.4231 ms
+a_avx completed in 24.1426 ms
+generic completed in 218.726 ms
+u_avx2 completed in 17.9979 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_s32f_deinterleave_real_32f(131071,1987)
+a_avx2 completed in 32.0095 ms
+a_sse4_1 completed in 41.2039 ms
+a_sse completed in 190.204 ms
+generic completed in 143.4 ms
+u_avx2 completed in 35.0586 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_deinterleave_real_8i(131071,1987)
+a_avx2 completed in 12.8076 ms
+a_ssse3 completed in 13.1118 ms
+a_avx completed in 11.5614 ms
+generic completed in 72.8979 ms
+u_avx2 completed in 11.6531 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_x2_multiply_conjugate_16ic(131071,1987)
+a_avx2 completed in 56.3068 ms
+a_sse4_1 completed in 111.648 ms
+generic completed in 877.373 ms
+u_avx2 completed in 54.6192 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8ic_x2_s32f_multiply_conjugate_32fc(131071,1987)
+a_avx2 completed in 99.6227 ms
+a_sse4_1 completed in 135.513 ms
+generic completed in 926.887 ms
+u_avx2 completed in 100.827 ms
+Best aligned arch: a_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_8i_convert_16i(131071,1987)
+u_avx2 completed in 15.7964 ms
+u_sse4_1 completed in 15.4743 ms
+generic completed in 213.139 ms
+a_avx2 completed in 15.8148 ms
+a_sse4_1 completed in 16.5707 ms
+u_orc completed in 17.113 ms
+Best aligned arch: u_sse4_1
+Best unaligned arch: u_sse4_1
+RUN_VOLK_TESTS: volk_8i_s32f_convert_32f(131071,1987)
+u_avx2 completed in 31.3901 ms
+u_sse4_1 completed in 37.1831 ms
+generic completed in 142.731 ms
+a_avx2 completed in 40.2021 ms
+a_sse4_1 completed in 35.5549 ms
+u_orc completed in 30.1508 ms
+Best aligned arch: u_orc
+Best unaligned arch: u_orc
+RUN_VOLK_TESTS: volk_32fc_s32fc_multiply2_32fc(131071,1987)
+u_avx_fma completed in 140.026 ms
+u_avx completed in 139.209 ms
+u_sse3 completed in 140.554 ms
+generic completed in 245.798 ms
+a_avx_fma completed in 144.097 ms
+a_avx completed in 140.485 ms
+a_sse3 completed in 142.537 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_s32f_multiply_32f(131071,1987)
+generic completed in 117.891 ms
+u_sse completed in 38.3933 ms
+u_avx completed in 34.3307 ms
+a_sse completed in 42.066 ms
+a_avx completed in 33.0108 ms
+u_orc completed in 34.8422 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_s32f_add_32f(131071,1987)
+generic completed in 116.354 ms
+u_sse completed in 35.5186 ms
+u_avx completed in 38.0824 ms
+a_sse completed in 53.4178 ms
+a_avx completed in 41.9051 ms
+u_orc completed in 40.5849 ms
+Best aligned arch: u_sse
+Best unaligned arch: u_sse
+RUN_VOLK_TESTS: volk_32f_binary_slicer_32i(131071,1987)
+generic completed in 173.828 ms
+generic_branchless completed in 165.77 ms
+a_sse2 completed in 49.3407 ms
+a_avx completed in 39.9154 ms
+u_sse2 completed in 42.9411 ms
+u_avx completed in 34.5067 ms
+Best aligned arch: u_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_binary_slicer_8i(131071,1987)
+generic completed in 178.404 ms
+generic_branchless completed in 178.109 ms
+a_avx2 completed in 28.0141 ms
+u_avx2 completed in 21.3849 ms
+a_sse2 completed in 40.4203 ms
+u_sse2 completed in 44.9263 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32u_reverse_32u(131071,1987)
+generic completed in 2642.53 ms
+byte_shuffle completed in 2799.58 ms
+lut completed in 425.395 ms
+2001magic completed in 914.84 ms
+1972magic completed in 1492.85 ms
+bintree_permute_top_down completed in 489.387 ms
+bintree_permute_bottom_up completed in 479.952 ms
+Best aligned arch: lut
+Best unaligned arch: lut
+RUN_VOLK_TESTS: volk_32f_tanh_32f(131071,1987)
+generic completed in 6010.63 ms
+series completed in 623.419 ms
+a_sse completed in 126.904 ms
+a_avx completed in 68.7436 ms
+a_avx_fma completed in 70.1523 ms
+u_sse completed in 122.001 ms
+u_avx completed in 68.1836 ms
+u_avx_fma completed in 67.9185 ms
+Best aligned arch: u_avx_fma
+Best unaligned arch: u_avx_fma
+RUN_VOLK_TESTS: volk_32fc_x2_s32fc_multiply_conjugate_add2_32fc(131071,1987)
+generic completed in 324.884 ms
+u_avx completed in 192.327 ms
+u_sse3 completed in 201.579 ms
+a_avx completed in 196.282 ms
+a_sse3 completed in 191.91 ms
+Best aligned arch: a_sse3
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_32f_exp_32f(131071,1987)
+a_sse2 completed in 300.94 ms
+u_sse2 completed in 317.928 ms
+generic completed in 854.226 ms
+Best aligned arch: a_sse2
+Best unaligned arch: u_sse2
+RUN_VOLK_TESTS: volk_32f_x2_powpuppet_32f(131071,1987)
+a_avx2_fma completed in 485.425 ms
+a_avx2 completed in 526.994 ms
+a_sse4_1 completed in 782.798 ms
+generic completed in 2333.16 ms
+u_sse4_1 completed in 782.912 ms
+u_avx2_fma completed in 504.988 ms
+u_avx2 completed in 463.529 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_s32f_mod_rangepuppet_32f(131071,1987)
+generic completed in 473.866 ms
+u_sse completed in 180.414 ms
+a_sse completed in 183.195 ms
+u_sse2 completed in 177.924 ms
+a_sse2 completed in 161.745 ms
+u_avx completed in 84.8037 ms
+a_avx completed in 82.6009 ms
+Best aligned arch: a_avx
+Best unaligned arch: u_avx
+RUN_VOLK_TESTS: volk_8u_x3_encodepolarpuppet_8u(131071,1987)
+generic completed in 1946.39 ms
+u_ssse3 completed in 1076.98 ms
+u_avx2 completed in 1027.85 ms
+a_ssse3 completed in 1114.98 ms
+a_avx2 completed in 1037.43 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_8u_polarbutterflypuppet_32f(131071,1987)
+generic completed in 33548.2 ms
+u_avx completed in 5401.82 ms
+u_avx2 completed in 5363.83 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32fc_s32f_power_spectral_densitypuppet_32f(131071,1987)
+no architectures to test
+RUN_VOLK_TESTS: volk_32f_s32f_clamppuppet_32f(131071,1987)
+generic completed in 1124.68 ms
+a_avx2 completed in 44.6802 ms
+a_sse4_1 completed in 74.5053 ms
+u_avx2 completed in 42.7603 ms
+u_sse4_1 completed in 74.9101 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+RUN_VOLK_TESTS: volk_32f_s32f_convertpuppet_8u(131071,1987)
+generic completed in 2535.97 ms
+u_avx2_fma completed in 28.2311 ms
+a_avx2_fma completed in 28.1437 ms
+u_avx2 completed in 28.0496 ms
+a_avx2 completed in 30.2008 ms
+u_sse2 completed in 55.7681 ms
+a_sse2 completed in 57.2295 ms
+u_sse completed in 311.317 ms
+a_sse completed in 305.088 ms
+Best aligned arch: u_avx2
+Best unaligned arch: u_avx2
+Writing /home/luisa_costa/.volk/volk_config...
