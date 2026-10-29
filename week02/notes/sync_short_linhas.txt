@@ -1,0 +1,16 @@
+25:static const int MIN_GAP = 480;
+26:static const int MAX_SAMPLES = 540 * 80;
+43:          MIN_PLATEAU(min_plateau),
+44:          d_threshold(threshold)
+74:                if (in_cor[i] > d_threshold) {
+75:                    if (d_plateau < MIN_PLATEAU) {
+81:                        d_freq_offset = arg(in_abs[i]) / 16;
+99:            while (o < ninput && o < noutput && d_copied < MAX_SAMPLES) {
+100:                if (in_cor[o] > d_threshold) {
+101:                    if (d_plateau < MIN_PLATEAU) {
+105:                    } else if (d_copied > MIN_GAP) {
+108:                        d_freq_offset = arg(in_abs[o]) / 16;
+119:                out[o] = in[o] * exp(gr_complex(0, -d_freq_offset * d_copied));
+124:            if (d_copied == MAX_SAMPLES) {
+154:    const double d_threshold;
+157:    const unsigned int MIN_PLATEAU;
