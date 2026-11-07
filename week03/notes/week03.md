@@ -1,4 +1,3 @@
-
 # Week 03 — OFDM Sync Long e correção do desvio de frequência
 
 Código analisado: `gr-ieee802-11/lib/sync_long.cc` (ramo `maint-3.10`). Os números de linha referem-se a esse ficheiro.
@@ -75,7 +74,7 @@ Conclusão: o atraso tem de ser igual a `SYNC_LENGTH` (320). O bloco "volta atr�
 | D = 320 | Correta | Descodifica. |
 | 320 < D ≤ ≈ 336 (Δ até 16) | Começa Δ amostras **mais cedo**, dentro do prefixo cíclico do próprio símbolo | Continua a descodificar. O deslocamento só dá uma rampa de fase por subportadora, igual na LTS e nos dados, que a estimativa de canal absorve. Margem real < 16, por causa do espalhamento do canal. |
 | D > ≈ 336 | Apanha a cauda do símbolo anterior | Interferência entre símbolos: deve falhar. |
-| D < 320 (Δ < 0) | Começa \|Δ\| amostras **mais tarde** e entra no prefixo do símbolo seguinte | Interferência entre símbolos: deve degradar logo e falhar para poucos amostras. |
+| D < 320 (Δ < 0) | Começa \|Δ\| amostras **mais tarde** e entra no prefixo do símbolo seguinte | Interferência entre símbolos: deve degradar logo e falhar para poucas amostras. |
 
 A assimetria (aguenta atrasar um pouco, não aguenta adiantar) vem de o prefixo cíclico estar **antes** de cada símbolo.
 
@@ -83,24 +82,63 @@ A assimetria (aguenta atrasar um pouco, não aguenta adiantar) vem de o prefixo 
 
 ## 5. Experiências
 
-Fluxograma: `flowgraphs/week_03.grc` (= `week_02_sweep.grc` + desvio de frequência + cadeia Sync Long → FFT → Frame Equalizer → Decode MAC). Métrica: n.º de tramas descodificadas (gravação com 772 tramas, ver semana 2).
+> **As linhas "Previsão" são hipóteses teóricas, não medições.** A linha "Resultado" é preenchida com os valores medidos.
 
-### 5.1 Desvio de frequência
+### Montagem e scripts
+
+| Ficheiro | O que faz |
+|---|---|
+| `scripts/week_03_rx.py` | Recetor completo em Python (mesma montagem do `week_02_sweep.grc` + desvio de frequência + ruído opcional + Sync Long → FFT → Frame Equalizer → Decode MAC). Imprime `DETETADAS=… DESCODIFICADAS=…`. |
+| `scripts/varrimento.py` | Corre o recetor para cada valor de um parâmetro e grava `data/varrimento_<nome>.csv`. |
+| `scripts/fig_week03.py` | Gera `figures/varrimento_<nome>.png` a partir do CSV, com as linhas de referência teóricas. |
+
+Duas métricas:
+- **Detetadas** = tags `wifi_start` à saída do Sync Short (na semana 2 foram 772 com threshold 0,56).
+- **Descodificadas** = tramas publicadas pelo Decode MAC, que só publica tramas com CRC certo.
+
+**N₀** = descodificadas sem perturbação (`freq_offset = 0`, D = 320). Ainda não foi medido; pode ser menor que 772, se algumas tramas falharem o CRC mesmo sem perturbação. As previsões estão escritas em relação a N₀.
+
+Como correr (no PC com GNU Radio + gr-ieee802-11, a partir de `week03/scripts/`):
+
+```bash
+F=../../week01/data/week01_signal.bin
+python3 week_03_rx.py --input-file $F            # teste: deve dar DESCODIFICADAS = N₀ > 0
+python3 varrimento.py freq       --input-file $F
+python3 varrimento.py delay      --input-file $F
+python3 varrimento.py synclength --input-file $F
+python3 fig_week03.py ../data/varrimento_freq.csv
+python3 fig_week03.py ../data/varrimento_delay.csv
+python3 fig_week03.py ../data/varrimento_synclength.csv
+```
+
+Para repetir com ruído: `python3 varrimento.py freq --input-file $F --saida ../data/varrimento_freq_noise3.csv -- --noise 3`.
+A frequência da portadora usada pelo Frame Equalizer é `--freq` (por omissão 5,89 GHz). *Confirmar a portadora da gravação da semana 1.*
+
+### 5.1 Desvio de frequência — `varrimento.py freq`
 
 | `freq_offset` (kHz) | 0 | ±50 | ±100 | ±200 | ±400 | ±600 | ±650 | ±700 |
 |---|---|---|---|---|---|---|---|---|
-| Previsão | 772 | 772 | 772 | 772 | 772 | ≈ 772 | cai | ≈ 0 |
+| Previsão (descodificadas) | N₀ | N₀ | N₀ | N₀ | N₀ | ≈ N₀ | cai | ≈ 0 |
 | Resultado | | | | | | | | |
 
-Previsão: falha perto de **625 kHz**, quando a estimativa grosseira dá a volta (ambiguidade de 2π).
-Opcional: repetir com a correção grosseira desligada. A falha deve passar para ≈ **156 kHz**.
+Previsão: falha perto de **625 kHz**, quando a estimativa grosseira dá a volta (ambiguidade de 2π). As detetadas devem manter-se perto de 772 em toda a gama, porque c[n] usa |a[n]| e não depende do desvio.
+Opcional: repetir com a correção grosseira desligada no código do Sync Short. A falha deve passar para ≈ **156 kHz**.
 
-### 5.2 Atraso da entrada `in_delayed`
+### 5.2 Atraso da entrada `in_delayed` — `varrimento.py delay`
 
 | D | 300 | 310 | 316 | 320 | 324 | 330 | 336 | 340 | 350 |
 |---|---|---|---|---|---|---|---|---|---|
-| Previsão | 0 | 0 | ↓ | 772 | 772 | ≈ 772 | ↓ | 0 | 0 |
+| Previsão (descodificadas) | 0 | 0 | ↓ | N₀ | N₀ | ≈ N₀ | ↓ | 0 | 0 |
 | Resultado | | | | | | | | | |
+
+### 5.3 Janela de procura `sync_length` (com D = `sync_length`) — `varrimento.py synclength`
+
+| `sync_length` | 128 | 192 | 256 | 320 | 400 | 480 | 520 | 600 |
+|---|---|---|---|---|---|---|---|---|
+| Previsão (descodificadas) | ? (pode perder o 2.º pico) | ? | N₀ | N₀ | N₀ | N₀ | erro (`"wtf"`)? | erro? |
+| Resultado | | | | | | | | |
+
+O limite inferior depende de onde o Sync Short começa a copiar a trama (ainda não sabemos). O superior testa a hipótese da secção 3 (MIN_GAP = 480). Se o bloco lançar a exceção, o `varrimento.py` regista o ponto como `erro` ou `timeout`.
 
 ---
 
