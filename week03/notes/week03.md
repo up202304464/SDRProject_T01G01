@@ -49,7 +49,7 @@ Nesta versão a correção é feita **em duas etapas, em dois blocos**:
 | Parâmetro | Onde | Efeito esperado |
 |---|---|---|
 | Desvio de frequência injetado `freq_offset` | Fluxograma: *Signal Source* × *Multiply* à entrada | Experiência principal (ver secção 5). |
-| `sync_length` | Parâmetro do bloco (linhas 41, 50) | Janela onde se procuram os picos da LTS. Se for curta demais, o 2.º pico fica fora da janela e a trama perde-se (nesta gravação, abaixo de ≈ 235). Se for longa demais, uma trama nova pode chegar durante SYNC e disparar a exceção `"wtf"` (linhas 86–87). Isso só acontece quando `sync_length` passa o intervalo entre deteções consecutivas: o MIN_GAP = 480 do Sync Short é só o pior caso possível; nesta gravação o intervalo mínimo é 2014. Ver 5.3. |
+| `sync_length` | Parâmetro do bloco (linhas 41, 50) | Janela onde se procuram os picos da LTS. Se for curta demais, o 2.º pico fica fora da janela e a trama perde-se (nesta gravação, abaixo de ≈ 235). Se for longa demais, **o fim de cada trama perde-se**: a cópia pára quando a tag da trama seguinte chega à entrada sem atraso (linhas 83–90), e nessa altura a entrada atrasada ainda vai `sync_length` amostras atrás. No GNU Radio, com esta gravação, as perdas começam entre 530 e 560. Muito mais acima, a exceção `"wtf"` (linhas 86–87) aparece quando `sync_length` passa o intervalo entre deteções. Ver 5.3 e 5.4. |
 | Atraso da entrada `in_delayed` | Fluxograma: bloco Delay | Tem de ser igual a `sync_length` (ver secção 4). |
 | Tolerância 63/65 e n.º de picos (4) | Código, linhas 203–227 | Só se recompilarmos. Mais tolerância ajuda com ruído, mas aceita mais pares errados. |
 | Correção grosseira ligada/desligada | Código do Sync Short | Desligando-a, a gama total desce de ≈ 625 kHz para ≈ 156 kHz. Mostra para que serve cada etapa. |
@@ -78,7 +78,7 @@ Conclusão: o atraso tem de ser igual a `SYNC_LENGTH` (320). O bloco "volta atr�
 
 A assimetria (aguenta atrasar um pouco, não aguenta adiantar) vem de o prefixo cíclico estar **antes** de cada símbolo.
 
-**Resultado (simulação, 5.2):** a assimetria confirma-se, mas a margem é maior do que a prevista: tramas todas certas de D = 314 a 344 (−6 a +24), perdas a partir de D ≤ 310 e D ≥ 350. A margem do lado de D > 320 ultrapassa os 16 do prefixo, provavelmente porque estas tramas são BPSK com código 1/2, que tolera alguma interferência entre símbolos *(explicação a confirmar)*.
+**Resultado (5.2 e 5.4):** a assimetria confirma-se nos dois casos, mas no **GNU Radio real** a margem é muito mais estreita do que na simulação. Para D < 320 perdem-se tramas logo a partir de D = 318. Para D > 320 funciona até ≈ 338, com uma exceção: **D = 336 dá sempre 0 tramas**, por causa da forma como o Frame Equalizer estima a fase (explicado em 5.4).
 
 ---
 
@@ -100,7 +100,7 @@ Duas métricas:
 - **Detetadas** = deteções do Sync Short.
 - **Descodificadas** = tramas com CRC certo.
 
-> As linhas **"Previsão"** foram escritas antes de medir (hipóteses teóricas). As linhas **"Resultado (sim.)"** vêm da simulação. Falta confirmar no GNU Radio (secção 5.4).
+> As linhas **"Previsão"** foram escritas antes de medir (hipóteses teóricas). As linhas **"Resultado (sim.)"** vêm da simulação e as linhas **"Resultado (GNU Radio)"** do recetor real (secção 5.4).
 
 Como repetir:
 ```bash
@@ -157,28 +157,59 @@ As detetadas ficam em 772 em toda a gama (c[n] usa |a[n]|, que não depende do d
 **Análise:**
 - **Limite inferior:** o início da LTS cai nas posições 165–170 da cópia, por isso o 2.º pico está em ≈ 229–234. Com `sync_length` ≥ 256 os dois picos estão na janela e tudo funciona. Com 192 e 224 só o 1.º pico está lá dentro, e o código escolhe um par errado entre picos mais pequenos (provavelmente correlações com a STS, de período 16): o início fica errado e tudo falha *(causa exata não verificada)*.
 - **O resultado curioso de 160 (702 tramas):** na maior parte das tramas nenhum par é encontrado e o código usa o valor por omissão `d_frame_start = SYNC_LENGTH = 160` (linha 201), que por acaso está 5–10 amostras antes do início verdadeiro, dentro da margem medida em 5.2. Funciona por sorte. Nesse caso o bloco real nem atualiza `d_freq_offset`, e fica com o valor da trama anterior (na simulação usa-se 0, o que dá quase o mesmo porque o desvio residual é pequeno).
-- **Limite superior, e a minha hipótese estava errada:** previ a exceção `"wtf"` acima de 480 (MIN_GAP). Na verdade ela só aparece quando `sync_length` passa o intervalo entre deteções consecutivas, que nesta gravação é no mínimo **2014**. Com 2000 tudo funciona; com 2100 todas as tramas (menos a última) disparam a exceção, que no GNU Radio pára o bloco. O MIN_GAP = 480 só garante que **qualquer** gravação funciona com `sync_length` ≤ 480.
+- **Limite superior, e a hipótese inicial estava errada:** previa-se a exceção `"wtf"` acima de 480 (MIN_GAP). Na simulação ela só aparece quando `sync_length` passa o intervalo entre deteções consecutivas (no mínimo **2014** nesta gravação), e a simulação dizia que tudo funcionava até 2000. **Isto está errado**, porque a simulação não modela o corte da cópia quando chega a tag seguinte. O GNU Radio mostra que as tramas se perdem muito antes, entre 530 e 560 (ver 5.4).
 
-### 5.4 Confirmação no GNU Radio (por fazer)
+### 5.4 Resultados no GNU Radio
 
-Correr os mesmos varrimentos com o recetor real (`week_03_rx.py` + `varrimento.py`) no PC com GNU Radio e comparar com as tabelas acima:
+Corrido num PC da FEUP (GNU Radio 3.10.1, gr-ieee802-11 `maint-3.10` compilado na conta do utilizador), com `scripts/week_03_rx.py` e `scripts/varrimento.py`. Métrica: tramas publicadas pelo Decode MAC (CRC certo).
 
-```bash
-F=../../week01/data/week01_signal.bin
-python3 week_03_rx.py --input-file $F            # esperado: DETETADAS=772 DESCODIFICADAS≈771
-python3 varrimento.py freq       --input-file $F
-python3 varrimento.py delay      --input-file $F
-python3 varrimento.py synclength --input-file $F
-python3 fig_week03.py ../data/varrimento_freq.csv   # (e delay, synclength)
-```
+**Base:** `DETETADAS=772 DESCODIFICADAS=771`, igual à simulação.
 
-A frequência da portadora usada pelo Frame Equalizer é `--freq` (por omissão 5,89 GHz). *Confirmar a portadora da gravação da semana 1.*
+**Desvio de frequência** (`data/varrimento_freq.csv`)
+
+| `freq_offset` (kHz) | 0 … ±600 | −625 | +625 | ±650 | ±700 | ±800 |
+|---|---|---|---|---|---|---|
+| Resultado (GNU Radio) | 771 | 401 | 370 | 0 | 0 | 0 |
+
+![GNU Radio: tramas vs desvio de frequência](../figures/varrimento_freq.png)
+
+Confirma a simulação e a previsão: limite em **fs/32 = 625 kHz**, onde metade das tramas cai de cada lado da ambiguidade.
+
+**Atraso D** (`data/varrimento_delay.csv`)
+
+| D | 290 | 300 | 310 | 314 | 318 | 320 | 322 | 326 | 330 | 334 | **336** | 338 | 340 | 350 | 360 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Resultado (GNU Radio) | 0 | 0 | 44 | 35 | 229 | 771 | 753 | 769 | 771 | 771 | **0** | 771 | 370 | 0 | 0 |
+| Resultado (sim.) | 0 | 52 | 766 | 771 | 771 | 771 | 771 | 772 | 772 | 772 | 772 | 772 | 772 | 733 | 0 |
+
+Repetido duas vezes: D = 336 → 0 e D = 338 → 771 nas duas. É determinístico.
+
+![GNU Radio: tramas vs atraso D](../figures/varrimento_delay.png)
+
+- **D < 320 falha muito mais depressa do que na simulação** (já perde ⅔ das tramas em D = 318). A janela avança para o prefixo do símbolo seguinte. O Frame Equalizer real (estimativa de fase pelos pilotos antes de equalizar, seguimento do desvio residual) é mais sensível a isso do que a equalização simples da simulação. *(Causa exata não isolada.)*
+- **O buraco em D = 336 explica-se pelo código do Frame Equalizer** (`frame_equalizer_impl.cc`, linhas 170–201): a fase de cada símbolo, β, é o ângulo da **soma dos 4 pilotos (±7, ±21) antes da equalização**, e é aplicada a todas as subportadoras (linha 201). Deslocar a janela da FFT Δ = D − 320 amostras multiplica a subportadora *k* por e^(−j2πkΔ/64). A soma dos pilotos fica proporcional a
+  S(Δ) = 2·cos(2π·21Δ/64) + 2·cos(2π·7Δ/64),
+  que é **exatamente 0 para Δ = 16** (D = 336). Aí β é só ruído, a fase de cada símbolo fica aleatória e nenhuma trama passa. Para Δ = 14 e Δ = 18 tem-se |S|/4 = 0,91, e funciona. A simulação não tinha este problema porque equaliza **antes** de usar os pilotos.
+- Conclusão: o atraso tem mesmo de ser igual a `sync_length`. Ainda há alguma margem para D > 320, mas não é contínua.
+
+**Janela `sync_length`** (`data/varrimento_synclength.csv` + corridas extra)
+
+| `sync_length` | 128 | 160 | 192 | 224 | 256 | 288 | 320 | 400 | 480 | 500 | 520 | 530 | 560 | 600 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Resultado (GNU Radio) | 0 | 432 | 0 | 0 | 771 | 771 | 771 | 771 | 771 | 771 | 771 | 771 | 656 | 0 |
+| Resultado (sim.) | 9 | 702 | 0 | 0 | 771 | — | 771 | 771 | 771 | — | — | — | — | 771 |
+
+![GNU Radio: tramas vs sync_length](../figures/varrimento_synclength.png)
+
+- **Limite inferior:** igual à simulação. É preciso ≳ 235 para os dois picos da LTS caberem na janela; 160 funciona em parte pelo valor por omissão `d_frame_start = 160`.
+- **Limite superior, que a simulação não previu: as tramas perdem-se entre 530 e 560.** Na fase COPY, o bloco limita a leitura até à próxima tag da entrada **sem atraso** (linhas 83–84) e, quando ela chega, passa a RESET (linhas 89–90). Como a entrada atrasada vai `sync_length` amostras atrás, de cada trama só se copiam as primeiras ≈ (intervalo entre tramas − `sync_length`) amostras. Aqui são ≈ 2021 − `sync_length`. Cada trama precisa de ≈ 167 (início da LTS) + 128 (LTS) + 15 × 80 (SIGNAL + 14 símbolos) ≈ 1495 amostras, o que dá um limite de ≈ 525. O valor medido (530–560) é um pouco mais alto. A diferença deve vir do sítio exato onde o Sync Short começa a copiar *(não verificado)*.
+- A exceção `"wtf"` não chegou a aparecer, porque as tramas perdem-se muito antes de `sync_length` chegar ao intervalo entre tramas.
+- Consequência prática: `sync_length` tem de caber entre o fim de uma trama e o início da seguinte. Com tramas mais longas ou mais próximas, o limite desce.
 
 ---
 
 ## 6. Por confirmar
 
-- Os resultados da secção 5 no GNU Radio real (5.4).
 - Que o Sync Short desta versão emite a tag `wifi_start` com a sua estimativa ω̂₁ como valor (pressuposto da linha 92).
 - Onde o desvio total (linha 135) é usado a seguir (Frame Equalizer, semanas 5/6).
 - Para registar o desvio fino estimado em cada trama no GNU Radio, acrescentar `d_freq_offset` ao `mylog` da linha 115 e recompilar (opcional).
