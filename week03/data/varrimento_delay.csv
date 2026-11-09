@@ -1,0 +1,16 @@
+parametro,valor,detetadas,descodificadas,estado
+sync-delay,290,772,0,ok
+sync-delay,300,772,0,ok
+sync-delay,310,772,44,ok
+sync-delay,314,772,35,ok
+sync-delay,318,772,229,ok
+sync-delay,320,772,771,ok
+sync-delay,322,772,753,ok
+sync-delay,326,772,769,ok
+sync-delay,330,772,771,ok
+sync-delay,334,772,771,ok
+sync-delay,336,772,0,ok
+sync-delay,338,772,771,ok
+sync-delay,340,772,370,ok
+sync-delay,350,772,0,ok
+sync-delay,360,772,0,ok

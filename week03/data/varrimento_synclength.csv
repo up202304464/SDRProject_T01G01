@@ -1,0 +1,12 @@
+parametro,valor,detetadas,descodificadas,estado
+sync-length,128,772,0,ok
+sync-length,160,772,432,ok
+sync-length,192,772,0,ok
+sync-length,224,772,0,ok
+sync-length,256,772,771,ok
+sync-length,288,772,771,ok
+sync-length,320,772,771,ok
+sync-length,400,772,771,ok
+sync-length,480,772,771,ok
+sync-length,520,772,771,ok
+sync-length,600,772,0,ok
