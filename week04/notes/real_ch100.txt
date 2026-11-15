@@ -1,0 +1,6 @@
+lidas 2000000 amostras (a partir da amostra 0)
+plateaus com >= 3 amostras seguidas acima do limiar (min_plateau = 2): 759
+plateaus com >= 100 amostras (duração típica da STS): 50
+0 de 50 plateaus longos têm LTS confirmada (par a 64, picos >= 5.0x a mediana; COM correção de frequência)
+RESUMO,Sample3_20MHz_Channel100.bin,2000000,759,50,50,0,cfo
+nenhuma trama com LTS confirmada neste troço; tenta --start com outro valor (ou --todas para ver os plateaus sem LTS)

@@ -1,0 +1,11 @@
+lidas 2000000 amostras (a partir da amostra 0)
+plateaus com >= 3 amostras seguidas acima do limiar (min_plateau = 2): 1504
+plateaus com >= 100 amostras (duração típica da STS): 79
+3 de 79 plateaus longos têm LTS confirmada (par a 64, picos >= 5.0x a mediana; COM correção de frequência)
+posições (amostra do ficheiro): [31967, 1187106, 1878284]
+RESUMO,Sample2_20MHz_Channel6.bin,2000000,1504,79,79,3,cfo
+trama 0: plateau de 103 amostras, deteção em n0 = 31967 (amostra 31967 do ficheiro)
+desvio de frequência estimado na STS: 47.3 kHz (corrigido antes do filtro)
+3 maiores picos (amostras desde a deteção): [190, 254, 289] | início dos dados (par a 64): 255 | eq. 7 à letra (último pico): 290
+espaçamentos: [64 35] | LTS confirmada: True
+guardado em ../figures/real_ch6.png

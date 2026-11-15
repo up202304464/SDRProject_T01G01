@@ -1,0 +1,11 @@
+lidas 1560192 amostras (a partir da amostra 0)
+plateaus com >= 3 amostras seguidas acima do limiar (min_plateau = 2): 772
+plateaus com >= 100 amostras (duração típica da STS): 772
+300 de 300 plateaus longos têm LTS confirmada (par a 64, picos >= 5.0x a mediana; COM correção de frequência)
+posições (amostra do ficheiro): [546, 2567, 4589, 6609, 8632, 10655, 12674, 14694, 16718, 18735]
+RESUMO,week01_signal.bin,1560192,772,772,300,300,cfo
+trama 0: plateau de 136 amostras, deteção em n0 = 546 (amostra 546 do ficheiro)
+desvio de frequência estimado na STS: 1.0 kHz (corrigido antes do filtro)
+3 maiores picos (amostras desde a deteção): [154, 218, 282] | início dos dados (par a 64): 283 | eq. 7 à letra (último pico): 283
+espaçamentos: [64 64] | LTS confirmada: True
+guardado em /mnt/c/Users/luisa/SDRProject_T01G01/week04/figures/comparacao_c_vs_mf.png
