@@ -1,2 +1,7 @@
 Sample*.bin
 __pycache__/
+
+# week05: vetores grandes (gerados pelo flowgraph)
+week05/data/vetores_s6.bin
+week05/data/vetores_s36.bin
+week05/data/vetores_s100.bin
